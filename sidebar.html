@@ -1,0 +1,116 @@
+<html>
+
+<head>
+<style>
+
+.B {
+background-color: #ff6400;
+color: #fff;
+width: 430px;
+height: 100%;
+max-width: 100%;
+position: fixed;
+top: 0;
+bottom: 0;
+right: -450px;
+padding: 140px 55px 0;
+z-index: 4;
+}
+
+.mi.mi-close {
+width: 46px;
+height: 46px;
+background-position: -105px -64px;
+}
+.mi {
+display: inline-block;
+background: transparent url("../img/spritesheet.png") top left no-repeat;
+width: 20px;
+height: 20px;
+vertical-align: middle;
+}
+
+
+.sidebar-toggle {
+  position: absolute;
+  top: 300px;
+  right: -20px;
+  width: 20px;
+  height: 20px;
+  background: black;
+}
+
+.but {
+position:absolute;
+right:200px;
+top:100px; 
+
+}
+.sidebar {
+  position: absolute;
+  top:0;
+  background: silver;
+  width: 1000px;
+  color: black;
+  margin-left: -1000px;
+  height: 100%;
+}
+
+
+
+</style>
+<script src="http://aleph.sagemath.org/static/jquery.min.js"></script> <script src="http://aleph.sagemath.org/embedded_sagecell.js"></script> <script>$(function(){sagecell.makeSagecell({inputLocation:'.sage'})});</script>
+</head>
+
+<body>
+
+
+
+
+
+
+
+<script>
+$(document).ready(function() {
+  sidebarStatus = false;
+  $('.but,.sidebar-toggle').click(function() {
+    if (sidebarStatus == false) {
+      $('.sidebar').animate({
+        marginLeft: "0px",
+        opacity: "1"
+      }, 1000);
+      $('.content').animate({
+        marginLeft: "150px",
+        opacity: "1"
+      }, 1000);
+      sidebarStatus = true;
+    }
+    else {
+      $('.sidebar').animate({
+        marginLeft: "-1000px",
+        opacity: "1"
+      }, 1000);
+      $('.content').animate({
+        marginLeft: "0px",
+        opacity: "1"
+      }, 1000);
+      sidebarStatus = false;
+    }
+  });
+});
+</script>
+<button class="but"> Open Rough Book </button>
+<div class="sidebar">
+  <div class="sidebar-toggle">
+
+</div>
+   <div class="sage"><script type="text/x-sage">
+
+</script></div>
+</div>
+  </div>
+
+
+</body>
+
+</html>
